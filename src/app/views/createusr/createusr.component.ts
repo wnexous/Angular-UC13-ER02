@@ -19,7 +19,8 @@ export class CreateusrComponent implements OnInit {
   criarDados() {
     console.log("dados recebidos:", this.userModel)
     this.loginService.createuser(this.userModel).subscribe((response) => {
-      console.log('response:', response)
+      if(response.ok) alert("usuario criado com sucesso.")
+      else alert("o usuario ja possui conta em nosso banco de usuarios.")
     })
   }
 }
