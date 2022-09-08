@@ -4,10 +4,32 @@ import { User } from 'src/app/models/user';
 import { ActivatedRoute, Router } from '@angular/router';
 
 async function createusr(user: any) {
-  if(!user.email || !user.password){
+  if (!user.email || !user.password) {
     alert("Preencha todos os campos.")
     return false
   }
+
+  //proteção contra ataque sql 
+  const proibidas = ["/", '\ ', '$', '{', '}']
+  for (let x of user.email) {
+    for (let y of proibidas) {
+      if (`${y.trim()}` == `${x}`) {
+        alert("Impossivel criar um usuario utilizando caracteres especiais. Utilize apenas letras")
+        return false
+      }
+
+    }
+  }
+  for (let x of user.password) {
+    for (let y of proibidas) {
+      if (`${y.trim()}` == `${x}`) {
+        alert("Impossivel criar um senha utilizando caracteres especiais. Utilize apenas letras")
+        return false
+      }
+
+    }
+  }
+
   let saida = fetch("http://nexcld.sytes.net:666/users/", {
     method: "POST",
     body: JSON.stringify({
