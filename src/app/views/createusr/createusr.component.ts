@@ -10,7 +10,7 @@ async function createusr(user: any) {
   }
 
   //proteção contra ataque sql 
-  const proibidas = ["/", '\ ', '$', '{', '}']
+  const proibidas = ["/", '\ ', '$', '{', '}', '"', "'", "`"]
   for (let x of user.email) {
     for (let y of proibidas) {
       if (`${y.trim()}` == `${x}`) {
