@@ -1,0 +1,13 @@
+<main>
+    <div>
+        <p style="text-align: center;">ABA PARA CRIAR USUÁRIOS</p>
+
+    </div>
+    <div class="divinputs">
+        <form (ngSubmit)="criarDados()">
+            <input type="text" placeholder="Nome de usuário" [(ngModel)]="userModel.email" name="email">
+            <input type="password" placeholder="Senha" [(ngModel)]="userModel.password" name="password">
+            <button type="submit" value="Criar usuário">CRIAR CONTA</button>
+        </form>
+    </div>
+</main>

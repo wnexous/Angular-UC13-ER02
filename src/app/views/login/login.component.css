@@ -7,6 +7,7 @@ main {
     background-color: #1F1F1F;
     margin: 0%;
     padding: 10%;
+    color: white;
 }
 
 .main {
@@ -14,6 +15,23 @@ main {
     display: flex;
     justify-content: center;
     margin-right: 15%;
+}
+
+.createaccount {
+    background-color: white;
+    opacity: 50%;
+    border-radius: 50px;
+    width: 50%;
+    margin-top: 10%;
+    -webkit-transition: all 0.5s;
+    height: 50px;
+}
+
+.divCreateaccount {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: left;
 }
 
 .entrar {
@@ -54,6 +72,7 @@ main {
     -webkit-transition: all 0.5s;
     height: 50px;
 }
+
 #botao-enviar:hover {
     opacity: 100%;
     color: black;

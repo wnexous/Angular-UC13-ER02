@@ -1,0 +1,15 @@
+<main>
+    <div>
+        <p style="text-align: center;">ABA PARA DELETAR USUÁRIOS</p>
+
+    </div>
+    <div class="divinputs">
+        <form (ngSubmit)="deletarDados()">
+
+            <input type="text" placeholder="Nome de usuário" [(ngModel)]="userModel.email" name="email">
+            <button type="submit" value="Deletar usuário">DELETAR</button>
+        </form>
+
+
+    </div>
+</main>

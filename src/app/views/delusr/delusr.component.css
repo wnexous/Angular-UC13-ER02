@@ -1,0 +1,39 @@
+main {
+    background-color: #1F1F1F;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 200%;
+}
+
+.divinputs {
+    justify-content: center;
+    display: flex;
+}
+
+.divinputs input {
+    width: 100%;
+    opacity: 50%;
+    border-radius: 20px;
+    padding: 1%;
+    margin-top: 2%;
+
+}
+
+.divinputs button {
+    width: 100%;
+    opacity: 50%;
+    border-radius: 20px;
+    padding: 1%;
+    margin-top: 2%;
+    -webkit-transition: 0.5s all;
+
+}
+
+.divinputs button:hover {
+    background-color: #1F1F1F;
+    color: white;
+
+}
+.divinputs form {
+    width: 40%;
+}

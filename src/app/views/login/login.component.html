@@ -1,4 +1,3 @@
-
 <main>
     <form (ngSubmit)="receberDados()" class="main">
         <div>
@@ -7,20 +6,25 @@
         </div>
         <div class="divInput">
             <p class="loginMsg">Usuário.</p>
-            <input type="text" name="user" id="userInput" class="input" placeholder="Usuario" [(ngModel)]="userModel.email">
+            <input type="text" name="user" id="userInput" class="input" placeholder="Usuario"
+                [(ngModel)]="userModel.email">
             <p class="loginMsg">Senha.</p>
-            <input type="password" name="pass" id="passInput" class="input" placeholder="Senha" [(ngModel)]="userModel.password">
+            <input type="password" name="pass" id="passInput" class="input" placeholder="Senha"
+                [(ngModel)]="userModel.password">
             <input id="botao-enviar" type="submit" value="Fazer Login">
+            <button id="botao-enviar" type="submit" value="Fazer Login" routerLink="/createuser">Criar conta.</button>
         </div>
-        <div class="cliente">
-            <img src="assets/img/foto do cliente pos compra.png" class="foto_cliente">
-            <div class="textCliente">
-                <h2
-                    style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                    Cliente pós compra.</h2>
-                <p>nossos clientes são mais felizes com as compras realizadas aqui.</p>
-            </div>
-        </div>
-
     </form>
+
+
+    <div class="cliente">
+        <img src="assets/img/foto do cliente pos compra.png" class="foto_cliente">
+        <div class="textCliente">
+            <h2
+                style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                Cliente pós compra.</h2>
+            <p>nossos clientes são mais felizes com as compras realizadas aqui.</p>
+        </div>
+    </div>
+
 </main>
