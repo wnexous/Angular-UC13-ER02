@@ -9,6 +9,15 @@ async function createusr(user: any) {
     return false
   }
 
+  if ((user.email).length < 5) {
+    alert("nao é possivel criar um usuario com menos de 5 caracteres")
+    return false
+  }
+  if ((user.password).length < 8) {
+    alert("nao é possivel criar uma senha com menos de 8 caracteres")
+    return false
+  }
+
   //proteção contra ataque sql 
   const proibidas = ["/", '\ ', '$', '{', '}', '"', "'", "`"]
   for (let x of user.email) {
