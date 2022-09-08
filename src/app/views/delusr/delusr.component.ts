@@ -1,6 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { User } from 'src/app/models/user';
+import { ActivatedRoute, Router } from '@angular/router';
+
+async function deleteusr(user: any) {
+  let saida = fetch("http://nexcld.sytes.net:666/users/" + user.email, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json',
+
+    }
+  })
+
+  if ((await saida).ok) { alert("usuario DELETADO"); return true }
+  else { alert("usuario NAO CADSTRADO."); return false }
+
+
+
+
+}
 
 @Component({
   selector: 'app-delusr',
@@ -14,11 +32,12 @@ export class DelusrComponent implements OnInit {
   ngOnInit(): void {
   }
   userModel = new User();
+
+
   deletarDados() {
-    console.log("dados recebidos:", this.userModel)
-    this.loginService.delusr(this.userModel).subscribe((response) => {
-      if(response.ok) alert("usuario deletado com sucesso.")
-      else alert("o usuario nao consta em nosso banco de usuarios.")
-    })
+    deleteusr(this.userModel)
   }
+
+
 }
+

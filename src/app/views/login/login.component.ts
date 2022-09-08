@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
     })
   }
-  criarConta(){
+  criarConta() {
     this.router.navigate([`/`], { relativeTo: this.route })
   }
 
