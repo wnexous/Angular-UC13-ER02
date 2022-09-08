@@ -1,0 +1,60 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+    background-color: #1F1F1F;
+    width: 100%;
+    padding-top: 10%;
+}
+
+footer {
+    background-color: #1F1F1F;
+}
+
+.divFooter {
+    margin: 0;
+    width: 50%;
+}
+
+.titleFooter {
+    color: white;
+    margin-left: 2%;
+    font-size: 250%;
+}
+
+.textFooter {
+    font-size: 117%;
+    color: white;
+}
+
+.qrdiv img {
+    padding-top: 10%;
+    max-width: 60%;
+    min-width: 10%;
+    
+}
+
+.qrdiv{
+    width: 20%;
+}
+.buttonSocial {
+    background-color: transparent;
+    border: transparent;
+    width: 15%;
+    -webkit-transition: 0.3s;
+
+}
+
+.buttonSocial:hover {
+    width: 17%
+}
+
+.imagemSocial {
+    width: 40%;
+}
+
+footer form {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}

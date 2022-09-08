@@ -1,0 +1,139 @@
+.barSelection {
+    background-color: #1F1F1F;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    text-align: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.itemSelection {
+    background-color: transparent;
+    border-color: transparent;
+    text-align: center;
+    color: white;
+    width: 20%;
+    font-size: 150%;
+    font-weight: bolder;
+    -webkit-transition: all 0.2s;
+}
+
+/* galeria de items */
+.bodyGallery {
+    background-color: white;
+    justify-content: center;
+    display: flex;
+}
+
+
+.itemE {
+    background-color: #1F1F1F;
+    justify-content: left;
+    width: 35%;
+    margin-left: 14%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-right: 1%;
+    -webkit-transition: all 0.5s;
+}
+
+.itemD {
+    background-color: #1F1F1F;
+    justify-content: right;
+    width: 35%;
+    margin-right: 14%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
+    -webkit-transition: all 0.5s;
+
+}
+
+#itemDestaque {
+    max-width: 100%;
+
+}
+
+#itemDestaque div {
+    text-align: right;
+
+}
+
+#itemDestaque div ul li {
+    margin: 10%;
+}
+
+#itemDestaque div ul {
+    position: relative;
+    left: 35%;
+    display: block;
+    margin: auto;
+    width: 15%;
+    color: white;
+    border: 1px solid #F1F7EE;
+    background-color: #313131;
+    margin-bottom: 25%;
+
+}
+
+#itemDestaque div h2 {
+    text-align: right;
+    margin: auto;
+    display: block;
+    bottom: 0;
+
+}
+
+#itemDestaque:hover {
+    size: 10%;
+    box-shadow: 0 4px 15px 0 rgb(255, 170, 0);
+    background-color: #121212;
+}
+
+#imagemDestaque {
+    max-width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    float: left;
+}
+
+
+.title {
+    font-size: 170%;
+    color: goldenrod;
+    text-align: right;
+    margin-right: 5%;
+}
+
+.description {
+    font-size: 100%;
+    color: white;
+    margin-top: 5%;
+    text-align: right;
+    margin-right: 5%;
+    overflow-wrap: break-word;
+    inline-size: 90%;
+}
+
+.price {
+    font-size: 150%;
+    color: white;
+    font-weight: bolder;
+    /* text-align: right; */
+    padding: auto;
+    display: block;
+    /* margin-top: 35%; */
+    margin-right: 5%;
+}
+
+.itemDestaque div {
+    background-color: aqua;
+}
+
+
+.topBottom {
+    border: 300px white;
+}

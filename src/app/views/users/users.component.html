@@ -1,0 +1,13 @@
+<main>
+    <div>
+        <p style="text-align: center;">Usuários cadastrados.</p>
+    </div>
+    <div class="list">
+        <p id="usr1">Oin</p>
+    </div>
+    <div class="col col-sm-12">
+        <h2 *ngIf="Name==null; else elseBlock">FirstName LastName</h2>
+      <ng-template #elseBlock><h2  [innerHTML] = "Name"></h2></ng-template>
+      </div>
+
+</main>
