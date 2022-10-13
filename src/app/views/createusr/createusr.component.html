@@ -8,6 +8,13 @@
             <input type="text" placeholder="Nome de usuário" [(ngModel)]="userModel.email" name="email">
             <input type="password" placeholder="Senha" [(ngModel)]="userModel.password" name="password">
             <button type="submit" value="Criar usuário">CRIAR CONTA</button>
+            <p id="allSpace"  class="erroOnLogin" *ngIf="allSpace">Preencha todos os campos.</p>
+            <p id="errorEmail"  class="erroOnLogin" *ngIf="errorEmail">nao é possivel criar um usuario com menos de 5 caracteres.</p>
+            <p id="errorPwd"  class="erroOnLogin" *ngIf="errorPwd">nao é possivel criar uma senha com menos de 8 caracteres</p>
+            <p id="errorCaracterEmail"  class="erroOnLogin" *ngIf="errorCaracterEmail">Impossivel criar um usuario utilizando caracteres especiais. Utilize apenas letras.</p>
+            <p id="errorCaracterPwd"  class="erroOnLogin" *ngIf="errorCaracterPwd">Impossivel criar um senha utilizando caracteres especiais. Utilize apenas letras.</p>
+            <p id="wasCreated"  class="erroOnLogin" *ngIf="wasCreated">usuario JA CADASTRADO..</p>
+            <p id="Sucessiful"  class="erroOnLogin" *ngIf="Sucessiful">usuario CRIADO com sucesso.</p>
         </form>
     </div>
 </main>

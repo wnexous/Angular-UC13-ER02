@@ -8,6 +8,8 @@
 
             <input type="text" placeholder="Nome de usuário" [(ngModel)]="userModel.email" name="email">
             <button type="submit" value="Deletar usuário">DELETAR</button>
+            <p id="Sucessiful" class="erroOnLogin" *ngIf="Sucessiful">Deletado com sucesso.</p>
+            <p id="notSucessiful" class="erroOnLogin" *ngIf="notSucessiful">Usuario nao encontrado.</p>
         </form>
 
 

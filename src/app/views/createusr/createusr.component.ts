@@ -2,20 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { User } from 'src/app/models/user';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ignoreElements } from 'rxjs';
 
 async function createusr(user: any) {
   if (!user.email || !user.password) {
-    alert("Preencha todos os campos.")
-    return false
+    return "allSpace"
   }
 
   if ((user.email).length < 5) {
-    alert("nao é possivel criar um usuario com menos de 5 caracteres")
-    return false
+    return "errorEmail"
   }
   if ((user.password).length < 8) {
-    alert("nao é possivel criar uma senha com menos de 8 caracteres")
-    return false
+    return "errorPwd"
   }
 
   //proteção contra ataque sql 
@@ -23,8 +21,7 @@ async function createusr(user: any) {
   for (let x of user.email) {
     for (let y of proibidas) {
       if (`${y.trim()}` == `${x}`) {
-        alert("Impossivel criar um usuario utilizando caracteres especiais. Utilize apenas letras")
-        return false
+        return "errorCaracterEmail"
       }
 
     }
@@ -32,14 +29,13 @@ async function createusr(user: any) {
   for (let x of user.password) {
     for (let y of proibidas) {
       if (`${y.trim()}` == `${x}`) {
-        alert("Impossivel criar um senha utilizando caracteres especiais. Utilize apenas letras")
-        return false
+        return "errorCaracterPwd"
       }
 
     }
   }
 
-  let saida = fetch("http://nexcld.sytes.net:666/users/", {
+  let saida = await fetch("http://nexcld.sytes.net:666/users/", {
     method: "POST",
     body: JSON.stringify({
       usuario: user,
@@ -51,8 +47,8 @@ async function createusr(user: any) {
 
     }
   })
-  if ((await saida).ok) { alert("usuario CRIADO com sucesso"); return true }
-  else { alert("usuario JA CADASTRADO."); return false }
+  if ((await saida).ok) { return "Sucessiful" }
+  else { return "wasCreated" }
 }
 
 @Component({
@@ -62,13 +58,38 @@ async function createusr(user: any) {
 })
 export class CreateusrComponent implements OnInit {
 
+  public allSpace = false
+  public errorEmail = false
+  public errorPwd = false
+  public errorCaracterEmail = false
+  public errorCaracterPwd = false
+  public wasCreated = false
+  public Sucessiful = false
+
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
   }
   userModel = new User();
   criarDados() {
-    console.log("dados recebidos:", this.userModel)
     createusr(this.userModel)
+      .then((data) => {
+        this.allSpace = false
+        this.errorEmail = false
+        this.errorPwd = false
+        this.errorCaracterEmail = false
+        this.errorCaracterPwd = false
+        this.wasCreated = false
+        this.Sucessiful = false
+        if (data == "Sucessiful") this.Sucessiful = true
+        if (data == "wasCreated") this.wasCreated = true
+        if (data == "errorCaracterPwd") this.errorCaracterPwd = true
+        if (data == "errorCaracterEmail") this.errorCaracterEmail = true
+        if (data == "errorPwd") this.errorPwd = true
+        if (data == "errorEmail") this.errorEmail = true
+        if (data == "allSpace") this.allSpace = true
+
+      })
+
   }
 }

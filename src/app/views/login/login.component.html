@@ -13,6 +13,8 @@
                 [(ngModel)]="userModel.password">
             <input id="botao-enviar" type="submit" value="Fazer Login">
             <button id="botao-enviar" type="submit" value="Fazer Login" routerLink="/createuser">Criar conta.</button>
+            <p id="errorPwd"  class="erroOnLogin" *ngIf="loginCorreto">Senha incorreta ou usuario não cadastrado.</p>
+
         </div>
     </form>
 

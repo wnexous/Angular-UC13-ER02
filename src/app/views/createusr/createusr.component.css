@@ -37,3 +37,10 @@ main {
 .divinputs form {
     width: 40%;
 }
+.erroOnLogin {
+    color: rgb(255, 63, 63);
+    font-size: large;
+}
+#Sucessiful{
+    color: rgb(46, 248, 56);
+}

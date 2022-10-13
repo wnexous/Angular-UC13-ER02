@@ -8,9 +8,7 @@ async function usrlogin(data: any) {
   let dataUsers: any = await fetch("http://nexcld.sytes.net:666/users/")
   dataUsers = await dataUsers.json()
   for (let db of dataUsers) {
-    console.log("db:", db.usuario)
     if (db.usuario.email == data.email && db.usuario.password == data.password) {
-      console.log("AQUI:", db.email)
       return true
 
     }
@@ -27,22 +25,26 @@ async function usrlogin(data: any) {
 
 
 export class LoginComponent implements OnInit {
+  public loginCorreto = true
 
-  constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private loginService: LoginService, private router: Router, private route: ActivatedRoute) {
+    this.loginCorreto = false
+   }
 
   ngOnInit(): void {
   }
   userModel = new User();
   receberDados() {
-    console.log("dados recebidos:", this.userModel)
     this.loginService.login(this.userModel).subscribe((response) => {
-      console.log("response:", response.ok)
     })
 
 
     usrlogin(this.userModel).then(data => {
       if (data) this.router.navigate([`/`], { relativeTo: this.route })
-      else alert("Senha incorreta ou usuario não cadastrado.")
+      else {
+
+        this.loginCorreto = true
+      }
 
     })
   }
